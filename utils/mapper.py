@@ -1,11 +1,9 @@
 import folium
 
-
 def create_map():
     global m
-    m = folium.Map(location=[39.600441, -41.141473], zoom_start=3,
+    m = folium.Map(location=[52.106502, 5.171758], zoom_start=8,
                    tiles="https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}", attr='Google')
-
 
 def add_marker(lat, long, mac):
     global m
