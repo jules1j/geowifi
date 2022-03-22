@@ -23,7 +23,7 @@ def wigle_bssid(bssid):
             ('netid', bssid),
         )
         response = requests.get('https://api.wigle.net/api/v2/network/detail', headers=headers, params=params)
-        if response.json()['success'] == 'true':
+        if response.json()['success'] == True:
             lat = response.json()['results'][0]['trilat']
             lon = response.json()['results'][0]['trilong']
             ssid = response.json()['results'][0]['ssid']
@@ -104,7 +104,7 @@ def apple_bssid(bssid):
         lat = "".join(latlist)
         lon = re.search('lon: (\S*)', str(bssid_response)).group(1)
         lonlist = list(str(lon))
-        lonlist.insert(2, '.')
+        lonlist.insert(1, '.')
         lon = "".join(lonlist)
         data = {"bssid": bssid, "lat": lat, "lon": lon}
 
